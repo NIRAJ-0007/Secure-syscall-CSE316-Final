@@ -16,7 +16,7 @@ WHITELISTED_COMMANDS = ["ls", "pwd", "date", "echo", "ping", "uptime"]
 # 2. PASSWORD HASHING (PIN: 1234)
 HASHED_PASSWORD = b'$2b$12$sr/FMB8Nn2b5OD2eTcXPauYGb//XWd/4LG/eXYCzB9CIy3QzwGUNG'
 LOG_FILE = "secure_call_log.txt"
-AUTHORIZED_USER = "Admin"
+AUTHORIZED_USER = "SystemUser"
 
 # --- Logging Function ---
 def log_call(user, command, status):
