@@ -8,6 +8,8 @@ import random
 #import cv2 # You would need this for camera access
 #import face_recognition # You would need this for facial recognition
 
+# OS Principle: Whitelisting ensures least privilege and access control. (<<<--- REVISION 6 CHANGE)
+
 # --- Configuration & Security ---
 
 # 1. COMMAND WHITELISTING
@@ -63,7 +65,8 @@ class SecureCallInterface(tk.Tk):
     def login_successful(self):
         self.current_user = AUTHORIZED_USER
         self.show_frame("MainInterface")
-        messagebox.showinfo("Login Success 🔓", f"Welcome, {self.current_user}! Security protocols engaged.")
+        # <<<--- REVISION 5 CHANGE: Refined success message
+        messagebox.showinfo("Login Success 🔓", f"Access Granted. Welcome, {self.current_user}. System fully operational.")
 
     def update_log_display(self, new_entry, status="INFO"): 
         if "MainInterface" in self.frames and hasattr(self.frames["MainInterface"], 'log_text'):
@@ -255,7 +258,6 @@ class MainInterface(ttk.Frame):
         output_frame.pack(padx=10, pady=10, fill="both", expand=True)
 
         # Label font size set to 17
-        # First modified line (from previous turn): Removed "(Increased Area/Font)"
         ttk.Label(output_frame, text="Command Output:", font=("Arial", 17, "bold")).pack(anchor="w") 
         
         # Output font is 18
@@ -272,7 +274,6 @@ class MainInterface(ttk.Frame):
         self.output_text.insert(tk.END, "System command output will appear here. Try 'ls; date'...\n")
         
         # Label font size set to 17
-        # SECOND MODIFIED LINE: Removed "(Increased Font)" from the label text
         ttk.Label(output_frame, text="Security Audit Trail:", font=("Arial", 17, "bold")).pack(anchor="w", pady=(10, 0)) 
         
         # Log font is 17
@@ -424,6 +425,9 @@ class MainInterface(ttk.Frame):
             self.status_var.set("❌ Execution Failed. Check output for details.")
             self.status_label.configure(foreground='red')
 
+
+# --- FINAL SUBMISSION CHECK --- (<<<--- REVISION 7 CHANGE)
+# Submission ID: NIRAJ-0007-FINAL
 
 if __name__ == "__main__":
     # Ensure all spaces are standard before running
