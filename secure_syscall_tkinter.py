@@ -36,7 +36,7 @@ def log_call(user, command, status):
 class SecureCallInterface(tk.Tk):
     def __init__(self):
         super().__init__()
-        self.title("🌈 Secure System Call Interface")
+        self.title("🌈 Secure System Call Interface V1.0")
         self.geometry("850x700")
         self.style = ttk.Style(self)
         self.style.theme_use('clam')
