@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+
+<form  onsubmit="return data()" action="html1.html">
+    UserId: <br>
+    <input type="text" id="m1"><br>
+    Mobile No.: <br>
+    <input type="text" id="m2"><br>
+    Password: <br>
+    <input type="password" id="m3"><br>
+    Confirm Password: <br>
+    <input type="password" id="m4"><br><br>
+    <input type="submit">
+
+</form>
+
+
+    <script>
+        function data(){
+            var a=document.getElementById("m1").value;
+            var b=document.getElementById("m2").value;
+            var c=document.getElementById("m3").value;
+            var d=document.getElementById("m4").value;
+    
+            if (a==""||b==""||c==""||d==""){
+                alert("All Fields Are Mandatory");
+                return false;
+            }
+    
+            else if (b.length<10||b.length>10){
+                alert("Numbers should be of 10 digits! please enter valid mobile number");
+                return false;
+            }
+    
+            else if (isNaN(b)){
+                alert("only numbers are allowed! please enter valid number");
+                return false;
+            }
+    
+            
+            else if (c!=d){
+                alert("please enter same");
+                return false;
+            }
+    
+            else{
+                true;
+            }
+    
+    
+        }
+
+</script>
+
+</body>
+</html>
